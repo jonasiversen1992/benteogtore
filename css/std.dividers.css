@@ -1,0 +1,200 @@
+/* standard dividers */
+.divider {
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+.sectionsList .section-divider {
+  margin: 3px -15px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 595px;
+}
+.dogcat_darkbrownDivider {
+  height: 33px;
+  background-image: url(../images/dogcat_darkbrown_divider.png);
+}
+.dogcat_groenDivider {
+  height: 24px;
+  background-image: url(../images/dogcat_green_divider.png);
+}
+.sunDivider {
+  height: 45px;
+  background-image: url(../images/sun_divider.png);
+}
+.soccerDivider {
+  height: 16px;
+  background-image: url(../images/soccer_divider.png);
+}
+.businessDivider {
+  height: 35px;
+  background-image: url(../images/business_divider.gif);
+}
+.horseDivider {
+  height: 35px;
+  background-image: url(../images/horse_divider.gif);
+}
+.princessDivider {
+  height: 35px;
+  background-image: url(../images/princess_divider_1.png);
+}
+.vikingDivider {
+  height: 40px;
+  background-image: url(../images/viking_divider_1.png);
+}
+.xmascookieDivider {
+  height: 45px;
+  background-image: url(../images/xmascookie_divider_1.png);
+}
+.solStdForsideDivider {
+  height: 45px;
+  background-image: url(../images/divider.gif);
+}
+/* userskin dividers */
+.ornament_skille_aDivider {
+  height: 17px;
+  background-image: url(../images/ornament_skille_a.png);
+}
+.ornament_skille_bDivider {
+  height: 25px;
+  background-image: url(../images/ornament_skille_b.png);
+}
+.ornament_skille_cDivider {
+  height: 40px;
+  background-image: url(../images/ornament_skille_c.png);
+}
+.ornamentDivider {
+  height: 25px;
+  background-image: url(../images/ornament.png);
+}
+.rosesDivider {
+  height: 30px;
+  background-image: url(../images/roses.png);
+}
+.nonfig_c_skilleDivider {
+  height: 20px;
+  background-image: url(../images/nonfig_c_skille.png);
+}
+.nonfig_a_skilleDivider {
+  height: 20px;
+  background-image: url(../images/nonfig_a_skille.png);
+}
+.nonfig_b_skilleDivider {
+  height: 12px;
+  background-image: url(../images/nonfig_b_skille.png);
+}
+.line1Divider {
+  height: 6px;
+  background-image: url(../images/line1.png);
+}
+.line2Divider {
+  height: 4px;
+  background-image: url(../images/line2.png);
+}
+.line3Divider {
+  height: 2px;
+  background-image: url(../images/line3.png);
+}
+.footprintsDivider {
+  height: 18px;
+  background-image: url(../images/footprints.png);
+}
+.muskulin_a_skilleDivider {
+  height: 41px;
+  background-image: url(../images/muskulin_a_skille.png);
+}
+.simpel_skille_aDivider {
+  height: 5px;
+  background-image: url(../images/simpel_skille_a.png);
+}
+.simpel_skille_bDivider {
+  height: 4px;
+  background-image: url(../images/simpel_skille_b.png);
+}
+.simpel_skille_cDivider {
+  height: 5px;
+  background-image: url(../images/simpel_skille_c.png);
+}
+.simpel_C_skilleDivider {
+  height: 40px;
+  background-image: url(../images/simpel_C_skille.png);
+}
+.Striber_skilleDivider {
+  height: 50px;
+  background-image: url(../images/Striber_skille.png);
+}
+.foraar_skilleDivider {
+  height: 50px;
+  background-image: url(../images/foraar_skille.png);
+}
+.sommer_skilleDivider {
+  height: 50px;
+  background-image: url(../images/sommer_skille.png);
+}
+.efteraar_skilleDivider {
+  height: 20px;
+  background-image: url(../images/efteraar_skille.png);
+}
+.vinter_skilleDivider {
+  height: 20px;
+  background-image: url(../images/vinter_skille.png);
+}
+.feminin_b_skilleDivider {
+  height: 50px;
+  background-image: url(../images/feminin_b_skille.png);
+}
+.bryllup_farve_skilleDivider {
+  height: 50px;
+  background-image: url(../images/bryllup_farve_skille.png);
+}
+.kidsDivider {
+  height: 20px;
+  background-image: url(../images/kids.png);
+}
+.katte_skilleDivider {
+  height: 51px;
+  background-image: url(../images/katte_skille.png);
+}
+.heste_skilleDivider {
+  height: 50px;
+  background-image: url(../images/heste_skille.png);
+}
+.hund_farve_skilleDivider {
+  height: 51px;
+  background-image: url(../images/hund_farve_skille.png);
+}
+.hund_skille_aDivider {
+  height: 35px;
+  background-image: url(../images/hund_skille_a.png);
+}
+.hund_skille_bDivider {
+  height: 50px;
+  background-image: url(../images/hund_skille_b.png);
+}
+.dashDivider {
+  height: 5px;
+  background-image: url(../images/dash.png);
+}
+.dash1Divider {
+  height: 18px;
+  background-image: url(../images/dash1.png);
+}
+.chainDivider {
+  height: 18px;
+  background-image: url(../images/chain.png);
+}
+.ping1Divider {
+  height: 8px;
+  background-image: url(../images/ping1.png);
+}
+.halloween1Divider {
+  height: 50px;
+  background-image: url(../images/halloween1.png);
+}
+.halloween2Divider {
+  height: 50px;
+  background-image: url(../images/halloween2.png);
+}
+.transparent1Divider {
+  height: 17px;
+  background-image: url(../images/transparent1.gif);
+}

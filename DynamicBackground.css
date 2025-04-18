@@ -1,0 +1,27 @@
+div.centerPage {
+  text-align: center;
+}
+
+div.centerPage table {
+  margin: 0 auto;
+  text-align: left;
+}
+
+div.bannerPosition {
+  position: absolute;
+  top: 0;
+  background-color: transparent;
+  z-index: 2;
+  display: none;
+}
+
+body {
+  background-color: #a3c2e0;
+  background-image: url("images/bgp_lines.png");
+  background-repeat: repeat;
+}
+
+div.picwrapper {
+  position: relative;
+  width: 100%;
+}

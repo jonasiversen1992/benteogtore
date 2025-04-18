@@ -1,0 +1,290 @@
+.sectionsList {
+  padding: 0 15px;
+}
+.sectionContainer {
+  margin: 33px 0 50px;
+}
+
+/***************** Text Section ********************/
+.textSectionHeadline {
+  margin: 0 0 25px;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 29px;
+}
+.textSectionContent {
+  font-size: 12px;
+}
+.textSectionContent * {
+  line-height: 150%;
+}
+.textSectionContent ul {
+  padding-left: 20px;
+  margin-left: 0;
+}
+.textSectionContent ul li {
+  list-style-position: inside;
+}
+.textSectionContent p {
+  margin: 0 0 0.8em;
+}
+.textSectionContent .textImage span {
+  display: block;
+  margin: 10px 0 0;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 14px;
+}
+
+.textSectionContent .largeImageTopLeft {
+  float: left;
+  width: 270px;
+  margin: 0 25px 20px 0;
+  text-align: center;
+}
+
+.textSectionContent .largeImageTopRight {
+  float: right;
+  width: 270px;
+  margin: 0 0 20px 25px;
+}
+
+.textSectionContent .smallImageTopLeft {
+  float: left;
+  width: 175px;
+  margin: 0 20px 20px 0;
+  text-align: center;
+}
+.textSectionContent .smallImageTopRight {
+  float: right;
+  width: 175px;
+  margin: 0 0 20px 20px;
+  text-align: center;
+}
+
+.textSectionContent .fullImageCenteredTop {
+  width: 565px;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+.textSectionContent .fullImageCenteredBottom {
+  width: 565px;
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+.mce-emotion {
+  vertical-align: middle;
+}
+
+/***************** Photo Section ********************/
+.photoSectionContent .photoImage {
+  float: left;
+}
+.photoSectionContent .photoImage span {
+  display: block;
+  margin: 10px 0 0;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 14px;
+}
+.photoSectionContent .photoImage span.cmpPictureSubtitle {
+  margin-top: 0;
+}
+
+/***************** Columns Section ********************/
+.columnsSectionContent .columnHeadline {
+  margin: 0 0 20px;
+  font-size: 18px;
+  line-height: 22px;
+}
+.columnsSectionContent .columnHeadline a {
+  text-decoration: underline;
+}
+.columnsSectionContent .columnDescription {
+  font-size: 12px;
+  line-height: 19px;
+}
+.columnsSectionContent .columnsNum2 .column {
+  float: left;
+  width: 270px;
+  margin: 0 25px 0 0;
+}
+.columnsSectionContent .photoImage {
+  margin: 0 0 20px;
+  overflow: hidden;
+  text-align: center;
+}
+.columnsSectionContent .columnsNum2 .columnLast {
+  margin: 0;
+}
+.columnsSectionContent .columnsNum2 .photoImage {
+  width: 270px;
+  height: 202px;
+}
+.columnsSectionContent .columnsNum2 .photoImage img {
+  max-width: 270px;
+}
+
+.columnsSectionContent .columnsNum3 .column {
+  float: left;
+  width: 175px;
+  margin: 0 20px 0 0;
+}
+.columnsSectionContent .columnsNum3 .columnLast {
+  margin: 0;
+}
+.columnsSectionContent .columnsNum3 .photoImage {
+  width: 175px;
+  height: 131px;
+}
+.columnsSectionContent .columnsNum3 .photoImage img {
+  max-width: 175px;
+}
+
+/***************** News Section ********************/
+.newsSectionHeadline {
+  margin: 0 0 20px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+.newsSectionList {
+  padding: 10px 0 0;
+  border-width: 1px 0;
+  border-style: solid;
+}
+.user_content_lightbg .newsSectionList {
+  border-color: #000;
+}
+.user_content_darkbg .newsSectionList {
+  border-color: #fff;
+}
+.newsSectionList .newsItem {
+  padding: 10px 0 20px;
+}
+.newsSectionList .newsItem .newsItemDate {
+  float: left;
+  width: 195px;
+  font-size: 12px;
+  font-style: italic;
+}
+.newsSectionList .newsItem .newsItemContent {
+  float: left;
+  width: 370px;
+}
+.newsSectionList .newsItem .newsItemHeadline {
+  margin: 0 0 5px;
+  font-size: 14px;
+}
+.newsSectionList .newsItem .newsItemHeadline a {
+  font-size: 14px;
+  text-decoration: underline;
+}
+.newsSectionList .newsItem .newsItemBody {
+  font-size: 12px;
+}
+
+/***************** Signature Section ********************/
+.signatureSectionContent {
+  position: relative;
+  min-height: 51px;
+}
+.signatureSectionContent .photoImage {
+  float: left;
+  width: 175px;
+}
+.signatureSectionContent .photoImage img {
+  width: 175px;
+}
+.signatureSectionContent .signatureContent {
+  position: absolute;
+  bottom: -12px;
+  left: 195px;
+  width: 370px;
+  word-wrap: break-word;
+}
+.signatureSectionContent .signatureContentNoImage {
+  position: static;
+}
+.signatureSectionContent .signatureContent .regards {
+  margin: 0 0 5px;
+  line-height: 1.5em;
+}
+.signatureSectionContent .signatureContent .signature {
+  font-size: 24px;
+  font-family: "Pacifico", serif;
+  line-height: 42px;
+  text-indent: 5px;
+}
+
+.signatureSectionContent .signatureContent .signaturePacifico {
+  font-family: "Pacifico", serif;
+}
+
+.signatureSectionContent .signatureContent .signatureMontez {
+  font-family: "Montez", serif;
+  font-size: 26px;
+}
+
+.signatureSectionContent .signatureContent .signatureDancingScript {
+  font-family: "Dancing Script", serif;
+  font-size: 26px;
+}
+
+.signatureSectionContent .signatureContent .signatureUnkempt {
+  font-family: "Unkempt", serif;
+}
+
+/***************** Slideshow Section ********************/
+
+.slideshowSectionContent {
+  margin-bottom: 40px;
+}
+.slideshowSectionContent .nivoSlider {
+  width: 565px;
+  height: 424px;
+}
+.slideshowSectionContent .nivoSlider .nivo-caption {
+  height: 40px;
+  z-index: 1000;
+  overflow: hidden;
+}
+.slideshowSectionContent .nivoSlider .nivo-caption * {
+  font-size: 18px;
+  color: #fff;
+}
+.slideshowSectionContent .nivoSlider .nivo-caption p {
+  padding: 0 15px;
+}
+.slideshowSectionContent .nivoSlider .nivo-caption .captionHeadline {
+  height: 40px;
+  line-height: 40px;
+}
+.slideshowSectionContent .nivoSlider .nivo-caption .captionText {
+  height: 32px;
+  font-size: 12px;
+  line-height: 16px;
+  overflow: hidden;
+}
+
+/***************** External Video Section ********************/
+
+.externalVideoSection .videoTitle,
+.ownVideoSection .videoTitle {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.externalVideoSection .videoText,
+.ownVideoSection .videoText {
+  margin-top: 11px;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.externalVideoSection .videoContent {
+  margin: 25px 0 10px 0;
+}

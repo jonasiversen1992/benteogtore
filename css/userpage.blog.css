@@ -1,0 +1,351 @@
+.hidden {
+  display: none;
+}
+
+.blogMain {
+  padding: 27px 15px 0;
+}
+.blogPostingTitle {
+  margin-bottom: 22px;
+}
+.blogPostingTitle .titleText {
+  float: left;
+  margin-left: 10px;
+  font-size: 18px;
+  line-height: 27px;
+  overflow: hidden;
+}
+.blogPostingTitle a.titleText {
+  text-decoration: underline;
+}
+
+.userpages_comments_default_divider {
+  display: none;
+}
+
+/* previous posts pager ---------------------------------------- */
+.previousPostsPager {
+  position: relative;
+  height: 18px;
+  margin: 0 0 20px;
+}
+.previousPostsPager a,
+.previousPostsPager a:hover {
+  font-size: 11px;
+}
+.previousPostsPager .previousPageLink {
+  background: url(../images/arrow_left.gif) no-repeat left center;
+  padding-left: 10px;
+}
+.user_content_darkbg .previousPostsPager .previousPageLink {
+  background: url(../images/arrow_left_white.gif) no-repeat left center;
+}
+.previousPostsPager .nextPageLink {
+  background: url(../images/arrow_right.gif) no-repeat right center;
+  padding-right: 10px;
+}
+.user_content_darkbg .previousPostsPager .nextPageLink {
+  background: url(../images/arrow_right_white.gif) no-repeat right center;
+}
+
+.previousPostsPager .middlePreviousPageLink,
+.previousPostsPager .middleNextPageLink {
+  padding: 0 5px;
+}
+
+.previousPostsPager .leftLinkContainer {
+  position: absolute;
+  left: 0px;
+}
+
+.previousPostsPager .rightLinkContainer {
+  position: absolute;
+  right: 0px;
+}
+
+.previousPostsPager .middleLinkContainer {
+  text-align: center;
+}
+
+/* post icons ---------------------------------------- */
+.blogPost .blogTitleIcon {
+  float: left;
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-image: url(../images/Icons_user-page.png);
+}
+.linkPost .blogTitleIcon {
+  background-position: 0 -28px;
+}
+.user_content_darkbg .linkPost .blogTitleIcon {
+  background-position: 0 0;
+}
+.photoPost .blogTitleIcon {
+  background-position: -28px -28px;
+}
+.user_content_darkbg .photoPost .blogTitleIcon {
+  background-position: -28px 0;
+}
+.externalVideoPost .blogTitleIcon,
+.videoPost .blogTitleIcon {
+  background-position: -56px -28px;
+}
+.user_content_darkbg .externalVideoPost .blogTitleIcon,
+.user_content_darkbg .videoPost .blogTitleIcon {
+  background-position: -56px 0;
+}
+.quotePost .blogTitleIcon {
+  background-position: -84px -28px;
+}
+.user_content_darkbg .quotePost .blogTitleIcon {
+  background-position: -84px 0;
+}
+.poemPost .blogTitleIcon {
+  background-position: -112px -28px;
+}
+.user_content_darkbg .poemPost .blogTitleIcon {
+  background-position: -112px 0;
+}
+.textPost .blogTitleIcon {
+  background-position: -140px -28px;
+}
+.user_content_darkbg .textPost .blogTitleIcon {
+  background-position: -140px 0;
+}
+
+/* post footer ---------------------------------------- */
+.blogPostFooter {
+  height: 25px;
+  padding: 0 5px;
+  margin-top: 20px;
+  font-size: 11px;
+  background-image: url(../images/footer_dark_bg.png);
+}
+.user_content_darkbg .blogPostFooter {
+  background-image: url(../images/footer_light_bg.png);
+}
+.blogPostFooter td {
+  height: 25px;
+  vertical-align: top;
+  padding-top: 4px;
+}
+.blogPostFooter img {
+  border-width: 0;
+  vertical-align: top;
+}
+.blogPostFooter .likeIconLink {
+  margin-right: 5px;
+  cursor: pointer;
+  vertical-align: bottom;
+}
+.blogPostFooter .fbShareIconLink {
+  cursor: pointer;
+}
+.blogPostFooter .commentIconLink {
+  margin-right: 5px;
+  vertical-align: bottom;
+}
+.blogPostFooter .postFooterCreationDate {
+  display: block;
+  height: 16px;
+  padding: 1px 0 0 20px;
+  background: url(../images/date-icon.gif) no-repeat 0 0;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.postFooterSocialButtons {
+  float: right;
+  margin-top: 5px;
+}
+
+.postFooterCreationDate {
+  float: left;
+  margin-top: 5px;
+}
+
+.postFooterSocialBtn {
+  float: right;
+  margin-left: 10px;
+}
+
+.likesCountLabel,
+.commentsCountLabel {
+  line-height: 16px;
+  font-size: 11px;
+}
+
+/* previous posts pager end ---------------------------------------- */
+
+.noPostsLabel {
+  padding-left: 10px;
+}
+.noPostsLabel h2 {
+  font-size: 24px;
+}
+
+.blogPost {
+  margin-bottom: 50px;
+  width: 565px;
+  overflow: hidden;
+}
+
+/* external video post (youtube, vimeo) ---------------------------- */
+.externalVideoPost .videoContent {
+  background-color: #000;
+}
+.externalVideoPost .videoText,
+.videoPost .videoText {
+  margin-top: 11px;
+  font-size: 11px;
+  font-style: italic;
+}
+
+/* video post (local) ---------------------------- */
+.videoPost .videoContent {
+  margin: 30px 0 20px 0;
+}
+
+/* overview list ---------------------------- */
+.overviewTitle {
+  margin: 6px 0 26px;
+}
+.overviewTitle h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.overviewList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+  z-index: 1000;
+}
+
+.overviewList .overviewMonthHeader {
+  margin: 0 0 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #000;
+}
+.overviewList .monthHeaderText {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.overviewList .overviewRow {
+  height: 24px;
+  font-size: 0;
+  line-height: 0;
+}
+.overviewList .overviewRowLast {
+  margin-bottom: 50px;
+}
+.overviewList .overviewPageLast {
+  margin-bottom: 50px;
+}
+.overviewList .overviewRow td {
+  height: 24px;
+  vertical-align: middle;
+}
+.overviewList .overviewRow td img.iconImage {
+  float: left;
+  margin-right: 5px;
+}
+.overviewList .overviewRow td span.iconLabel {
+  float: left;
+  line-height: 16px;
+}
+.overviewList .overviewRow td .previousPostTitle {
+  display: block;
+  width: 345px;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 24px;
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+.linkPost .linkContent .linkLabel a {
+  display: block;
+  float: left;
+  padding: 13px;
+  background-image: url(../images/link_post_url_black_bg.png);
+  background-position: left top;
+  background-repeat: repeat;
+  color: #000;
+  font-size: 16px;
+  font-family: Trebuchet MS;
+  text-decoration: underline;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.linkPost .linkContent .linkLabel a div {
+  cursor: pointer;
+}
+
+.user_content_darkbg .linkPost .linkContent .linkLabel a {
+  color: #fff;
+  background-image: url(../images/link_post_url_white_bg.png);
+}
+.linkPost .linkContent .linkLabel img {
+  margin: 0 0 0 10px;
+  border: 0px;
+  vertical-align: middle;
+}
+.linkPost .linkContent .linkText {
+  margin-top: 11px;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 19px;
+}
+
+.poemPost .poemContent .poemTitle {
+  margin-bottom: 2px;
+  font-size: 16px;
+}
+.poemPost .poemContent .poemAuthor {
+  margin-top: 15px;
+  font-size: 11px;
+  font-style: italic;
+}
+.poemPost .poemContent .poemText {
+  font-size: 12px;
+  line-height: 19px;
+}
+
+.quotePost .quoteContent .quoteText {
+  font-size: 16px;
+  line-height: 22px;
+  font-style: italic;
+}
+.quotePost .quoteContent .quoteSource {
+  margin-top: 15px;
+  font-size: 11px;
+  font-style: italic;
+}
+/* text Post  ---------------------------- */
+.textPost .textPostContent {
+  font-size: 12px;
+  line-height: 19px;
+}
+.textPost .textPostContent .imageBox {
+  float: left;
+  margin: 5px 20px 20px 0;
+}
+.textPost .textPostContent .htmlContent p {
+  margin: 0;
+}
+.textPost .textPostContent .htmlContent img {
+  vertical-align: middle;
+}
+
+.photoPost .photoPostContent .photoText {
+  font-size: 11px;
+  font-style: italic;
+  margin-top: 11px;
+}

@@ -1,0 +1,60 @@
+/* player start */
+.playerBg {
+  background-image: url("../images/bg.gif");
+  width: 320px;
+  height: 44px;
+}
+.playerControl {
+  margin-left: 5px;
+  padding-top: 6px;
+}
+
+.playerTbl td {
+  padding-right: 6px;
+}
+
+.playerTbl td.last {
+  padding-right: 8px;
+}
+
+.playerBarTbl {
+  width: 140px;
+  background-image: url("../images/bar.gif");
+}
+.playerBarPlace {
+  margin-top: 1px;
+  text-align: left;
+}
+
+.bitrateTextStyle {
+  margin-bottom: -1em;
+  color: #000000;
+  font-family: verdana;
+  font-size: 8px;
+}
+
+.playerMovieStripImg {
+  margin: 8px;
+}
+
+.video-messages-block {
+  border-bottom: solid 1px #000;
+  width: 565px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 40px 0 45px 0;
+  margin: 0 auto;
+}
+.user_content_darkbg .video-messages-block {
+  border-bottom: solid 1px #fff;
+}
+.video-messages-block div {
+  margin: 0 auto;
+}
+.video-messages-block h3 {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+/* player end */

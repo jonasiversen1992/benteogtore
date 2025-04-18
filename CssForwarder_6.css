@@ -1,0 +1,759 @@
+.tmpMain {
+  font-family: "Trebuchet MS", Tahoma, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  width: 595px;
+}
+
+.tmpMainBox .twoLineSpace {
+  padding-bottom: 15px;
+}
+
+.tmpMainTop {
+  background-repeat: no-repeat;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  text-align: center;
+  height: 122px;
+  border-bottom: solid 1px #ffffff;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.user_top {
+  margin-bottom: 12px;
+}
+
+.tmpMainContent {
+  padding: 5px;
+  text-align: left;
+}
+
+.tmpMainContent .twoLineSpace {
+  padding-bottom: 15px !important;
+}
+
+.tmpMainLeftside1 {
+  width: 80px;
+  float: left;
+}
+
+.tmpMainRightside1 {
+  width: 345px;
+  float: right;
+}
+
+.tmpMainClear {
+  clear: both;
+  font-size: 1px;
+  line-height: 1px;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.tmpMainPicBox {
+  width: 595px;
+  margin: 0px 0;
+}
+.tmpMainPicSubBox {
+  padding: 0 72px 0 72px;
+}
+
+.tmpMainPicSubBox .twoLineSpace {
+  padding-bottom: 0;
+}
+
+.tmpMainTitle {
+  font-size: 32px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.tmpMainRow1 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.tmpMainDivider {
+  height: 45px;
+  margin-bottom: 10px;
+}
+.user_divider_box {
+  margin-bottom: 15px;
+}
+
+.tmpMainSkinBox {
+  width: 450px;
+  background-color: #fff;
+  padding: 2px;
+}
+
+.tmpMainSubSkinBox1 {
+  background-color: #fff;
+}
+
+.tmpMainSkinTitle {
+  width: 434px;
+  font-size: 16px;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.imgPoster {
+  float: right;
+  width: 111px;
+}
+.tmpMainSkinSubTitle {
+  text-align: left;
+  font-size: 12px;
+  width: 434px;
+  overflow: hidden;
+}
+.tmpMainSkinSubTitle span {
+  display: block;
+  width: 434px;
+  word-wrap: break-word;
+}
+
+.tmpMainSkinRow1 {
+  font-size: 13px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.tmpMainLink {
+  font-size: 13px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* horizontal pager */
+.hrzpager * {
+  margin: 0px;
+  padding: 0px;
+}
+
+.hrzpager ul {
+  margin-bottom: 10px;
+}
+
+.hrzpager li {
+  display: inline;
+  list-style-type: none;
+}
+
+.hrzpagerprevnext {
+  width: 80px;
+  height: 16px;
+  line-height: 16px;
+  padding: 1px 10px 1px 10px;
+}
+
+.hrzpager a {
+  padding: 1px 10px 1px 10px;
+  color: #000000;
+  font-size: 12px;
+  height: 16px;
+  line-height: 16px;
+  text-decoration: none;
+}
+
+a.hrzpagercurrent {
+  color: #ffffff;
+  background-color: #000000;
+}
+.user_content_lightbg a.hrzpagercurrent {
+  color: #fff;
+  background-color: #000;
+}
+.user_content_darkbg a.hrzpagercurrent {
+  color: #000;
+  background-color: #fff;
+}
+/* horizontal pager end */
+
+/* guestbook form start */
+.hidden {
+  display: none;
+}
+
+.guestbookFormWrapper {
+  position: relative;
+  width: 450px;
+  margin: 20px auto;
+  font-size: 0;
+  background-color: #fff;
+  border: solid 1px #fff;
+}
+.guestbookForm,
+.guestbookReCaptcha,
+.guestbookBubbleEditor {
+  position: relative;
+  z-index: 100;
+  width: 420px;
+  border: solid 3px #aaa;
+  padding: 12px;
+  font-size: 0;
+}
+.guestbookFormImagePreview {
+  float: right;
+  width: 151px;
+  font-size: 0;
+  text-align: left;
+}
+.guestbookFormInputs {
+  float: left;
+  width: 252px;
+  text-align: left;
+}
+.guestbookFormInputs .textField,
+.guestbookFormInputs textarea {
+  width: 251px;
+  padding: 2px;
+  margin-bottom: 12px;
+  border-color: #3d3f40 #bababa #bababa #3d3f40;
+  border-width: 1px;
+  border-style: solid;
+  font-family: Trebuchet MS;
+  color: #9b9b9b;
+  font-size: 12px;
+}
+.guestbookFormInputs .textFieldActive {
+  color: #000;
+}
+.guestbookFormInputs .textFieldLast {
+  margin: 0;
+}
+.guestbookFormInputs textarea {
+  height: 95px;
+}
+
+.guestbookEntryImage {
+  width: 151px;
+}
+
+.guestbookFormImagePreview .guestbookEntryImageHolder {
+  position: relative;
+  width: 151px;
+  height: 151px;
+  margin-bottom: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.guestbookFormImagePreview
+  .guestbookEntryImageHolder
+  .guestbookEntryImageAction {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 149px;
+  height: 149px;
+}
+.guestbookFormImagePreview
+  .guestbookEntryImageHolder
+  .guestbookEntryImageAction
+  table {
+  width: 100%;
+  height: 100%;
+}
+.guestbookFormImagePreview
+  .guestbookEntryImageHolder
+  .guestbookEntryImageAction
+  table
+  td {
+  font-size: 13px;
+  text-align: center;
+}
+.guestbookFormImagePreview
+  .guestbookEntryImageHolder
+  .guestbookEntryImageAction
+  table
+  td
+  a {
+  display: block;
+  width: 149px;
+  height: 149px;
+  color: #000;
+  text-decoration: underline;
+  line-height: 149px;
+}
+
+.guestbookFormImagePreview .guestbookEntryImageHolder .guestbookEntryAddImage {
+  border: dashed 1px #000;
+  background-color: #fff;
+}
+.guestbookFormImagePreview
+  .guestbookEntryImageHolder
+  .guestbookEntryChangeImage
+  table
+  td
+  a {
+  text-decoration: none;
+}
+.guestbookFormImagePreview
+  .guestbookEntryImageHolder
+  .guestbookEntryChangeImage
+  table
+  td
+  a
+  span {
+  padding: 2px 5px;
+  background-color: #fff;
+}
+
+.addNewEntryButtonHolder {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  height: 18px;
+}
+.addNewEntryButtonHolder .addNewEntryButton {
+  float: right;
+  color: #fff;
+}
+.addBubbleButtonHolder {
+  display: none;
+  position: absolute;
+  bottom: 36px;
+  right: 12px;
+  height: 18px;
+}
+.addBubbleButtonHolder .addBubbleButton,
+.addBubbleButtonHolder .editBubbleButton {
+  float: right;
+  color: #fff;
+}
+.addBubbleButtonHolder .editBubbleButton {
+  display: none;
+}
+
+.guestbookReCaptcha h4 {
+  margin: 0 0 5px;
+  color: #000;
+  font-size: 14px;
+  font-weight: normal;
+}
+.guestbookFormWrapper .btnRecaptchaSubmit {
+  color: #fff;
+}
+.guestbookFormWrapper .reCaptchaContainer {
+  margin-bottom: 10px;
+}
+
+.guestbookBubbleEditor {
+  display: none;
+}
+.guestbookBubbleInputs {
+  float: left;
+  width: 252px;
+  font-size: 12px;
+  text-align: left;
+}
+.guestbookBubbleInputs .textField {
+  width: 251px;
+  padding: 2px;
+  margin-bottom: 12px;
+  border-color: #3d3f40 #bababa #bababa #3d3f40;
+  border-width: 1px;
+  border-style: solid;
+  font-family: Trebuchet MS;
+  color: #000;
+  font-size: 12px;
+}
+.guestbookBubbleInputs p {
+  margin: 0 0 12px;
+}
+.guestbookBubbleInputs table {
+  margin: 0;
+}
+.guestbookBubbleInputs .imgBalloonType {
+  cursor: pointer;
+}
+
+.guestbookBubblePreview {
+  float: right;
+  width: 151px;
+  font-size: 0;
+  text-align: left;
+}
+.guestbookBubblePreview .guestbookBubbleImageHolder {
+  position: relative;
+  width: 151px;
+  text-align: center;
+}
+.cancelBubbleButtonHolder {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  height: 18px;
+}
+.cancelBubbleButtonHolder .cancelBubbleButton {
+  float: right;
+  color: #fff;
+}
+.saveBubbleButtonHolder {
+  position: absolute;
+  bottom: 36px;
+  right: 12px;
+  height: 18px;
+}
+.saveBubbleButtonHolder .saveBubbleButton {
+  float: right;
+  color: #fff;
+}
+
+.imgBalloonDefault {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.promo_tooltip {
+  position: absolute;
+  z-index: 10000;
+}
+.promo_tooltip .tooltip_content {
+  width: 220px;
+  padding: 25px 25px 10px 40px;
+  background: url(images/tooltip_top_1.png) no-repeat 0 0;
+}
+.promo_tooltip .tooltip_content .resultText {
+  margin: 0 0 5px;
+}
+.promo_tooltip .tooltip_content .tipText {
+  margin: 0;
+}
+.promo_tooltip .tooltip_content a {
+  color: #000;
+}
+
+.promo_tooltip .tooltip_bottom {
+  width: 285px;
+  height: 14px;
+  background: url(images/tooltip_bottom_1.png) no-repeat 0 0;
+  overflow: hidden;
+}
+.promo_tooltip .tooltip_close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 11px;
+  height: 11px;
+  background: url(images/tooltip_close.gif) no-repeat 0 0;
+  cursor: pointer;
+}
+
+.guestbookErrorTooltip {
+  position: absolute;
+  z-index: 10000;
+}
+.guestbookErrorTooltip .tooltipContent {
+  width: 220px;
+  padding: 25px 25px 10px 40px;
+  background: url(images/tooltip_top_1.png) no-repeat 0 0;
+}
+.guestbookErrorTooltip .tooltipBottom {
+  width: 285px;
+  height: 14px;
+  background: url(images/tooltip_bottom_1.png) no-repeat 0 0;
+  overflow: hidden;
+}
+/* guestbook form end */
+
+/* business start */
+td.business {
+  color: #808080;
+  background: #e5e5e5;
+}
+
+td.business .tmpTop {
+  background-image: url(images/business_top.gif);
+}
+
+td.business .tmpDivider {
+  background: url(images/business_divider_1.gif) no-repeat;
+}
+
+td.business .tmpTitle {
+  display: none;
+  padding: 0px 0px 0px 0px;
+}
+
+td.business .tmpSubSkinBox1 {
+  border: solid 3px #e5e5e5;
+}
+
+td.business div.tmpLink a {
+  color: #808080;
+}
+
+td.business .tmpMainBox {
+  font-size: 84%;
+}
+
+td.business .tmpMainSkinRow1 {
+  font-size: 12px;
+}
+
+td.business .tmpMainLink {
+  font-size: 12px;
+}
+/* business end */
+
+/* horse start */
+td.horse {
+  color: #a52a2a;
+  background: #fae0b0;
+}
+
+td.horse .tmpTop {
+  background-image: url(images/horse_top.gif);
+}
+
+td.horse .tmpDivider {
+  background: url(images/horse_divider_1.gif) no-repeat;
+}
+
+td.horse .tmpTitle {
+  display: none;
+  padding: 0px 50px 0px 125px;
+}
+
+td.horse .tmpSubSkinBox1 {
+  border: solid 3px #fae0b0;
+}
+
+td.horse div.tmpLink a {
+  color: #a52a2a;
+}
+
+td.horse .hrzpager a {
+  color: #a52a2a;
+}
+
+td.horse a.hrzpagergreyout {
+  color: #e5d7bb;
+}
+
+td.horse a.hrzpagercurrent {
+  color: #e5d7bb;
+}
+
+td.horse .tmpMainBox {
+  font-size: 84%;
+}
+
+td.horse .tmpMainSkinRow1 {
+  font-size: 12px;
+}
+
+td.horse .tmpMainLink {
+  font-size: 12px;
+}
+/* horse end */
+
+/* princess start */
+td.princess {
+  color: #a52a2a;
+  background: #fecfd9;
+}
+
+td.princess .tmpTop {
+  background-image: url(images/princess_top.png);
+}
+
+td.princess .tmpDivider {
+  background: url(images/princess_divider.png) no-repeat;
+}
+
+td.princess .tmpTitle {
+  display: none;
+  padding: 0px 0px 0px 0px;
+  font-size: 36px;
+}
+
+td.princess .tmpSubSkinBox1 {
+  border: solid 3px #fecfd9;
+}
+
+td.princess div.tmpLink a {
+  color: #a52a2a;
+}
+
+td.princess .tmpMainBox {
+  font-size: 84%;
+}
+
+td.princess .tmpMainSkinRow1 {
+  font-size: 12px;
+}
+
+td.princess .tmpMainLink {
+  font-size: 12px;
+}
+/* princess end */
+
+/* xmascookie start */
+td.xmascookie {
+  color: #fff;
+  background: #d40000 url(images/xmascookie_mainbg.gif);
+}
+
+td.xmascookie .tmpTop {
+  background-image: url(images/xmascookie_top.png);
+  border: 0px;
+}
+
+td.xmascookie .tmpDivider {
+  background: url(images/xmascookie_divider.png) no-repeat;
+}
+
+td.xmascookie .tmpTitle {
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+}
+
+td.xmascookie .tmpOver {
+  display: none;
+  margin: 5px 0 0 0;
+  height: 55px;
+  line-height: 55px;
+  overflow: hidden;
+  width: 390px;
+}
+
+td.xmascookie .tmpTopBg {
+  background: url(images/xmascookie_topbg.png) no-repeat;
+  height: 47px;
+}
+
+td.xmascookie .tmpBg {
+  background-image: url(images/xmascookie_bg.png);
+}
+
+td.xmascookie .tmpSubSkinBox1 {
+  border: solid 3px #d40000;
+}
+
+td.xmascookie div.tmpLink a {
+  color: #000;
+}
+
+td.xmascookie .tmpMainPicSubBox {
+  color: #000;
+}
+
+td.xmascookie .tmpMainRow1 {
+  color: #fff;
+}
+
+td.xmascookie .hrzpager a {
+  color: #ffffff;
+}
+
+td.xmascookie a.hrzpagergreyout {
+  color: #ff3333;
+}
+
+td.xmascookie a.hrzpagercurrent {
+  color: #ff0000;
+  background-color: #ffffff;
+}
+
+td.xmascookie .tmpMainBox {
+  font-size: 84%;
+}
+
+td.xmascookie .tmpMainSkinRow1 {
+  font-size: 12px;
+}
+
+td.xmascookie .tmpMainLink {
+  font-size: 12px;
+}
+/* xmascookie end */
+
+/* viking start */
+td.viking {
+  color: #fff;
+  background: #c3af96 url(images/viking_mainbg.gif);
+}
+
+td.viking .tmpTop {
+  background-image: url(images/viking_top.png);
+  border: 0px;
+}
+
+td.viking .tmpDivider {
+  background: url(images/viking_divider.png) no-repeat;
+}
+
+td.viking .tmpTitle {
+  padding: 0;
+  text-align: center;
+  display: inline-block;
+}
+
+td.viking .tmpOver {
+  display: none;
+  margin: 10px 0 0 0;
+  height: 60px;
+  overflow: hidden;
+  width: 480px;
+  font-size: 30px;
+  color: #8c5921;
+}
+
+td.viking .tmpSubSkinBox1 {
+  border: solid 3px #c3af96;
+}
+
+td.viking div.tmpLink a {
+  color: #000;
+}
+
+td.viking .tmpMainPicSubBox {
+  color: #000;
+}
+
+td.viking .tmpMainRow1 {
+  color: #fff;
+}
+
+td.viking .tmpMainBox {
+  font-size: 84%;
+}
+
+td.viking .tmpMainSkinRow1 {
+  font-size: 12px;
+}
+
+td.viking .tmpMainLink {
+  font-size: 12px;
+}
+/* viking end */
+
+/* user_skin start */
+td.user_content .tmpSubSkinBox1 {
+  border: solid 3px #aaaaaa;
+}
+
+td.user_content .tmpMainBox {
+  font-size: 84%;
+}
+
+td.user_content .tmpMainSkinRow1 {
+  font-size: 12px;
+}
+
+td.user_content .tmpMainLink {
+  font-size: 12px;
+}
+/* user_skin end */
