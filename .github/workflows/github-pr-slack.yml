@@ -1,0 +1,120 @@
+name: Slack Notification on New PR
+
+on:
+  pull_request:
+    types: [opened]
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  notify_slack_on_new_pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set repository name
+        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+        id: repo-name
+        run: echo "name=$(echo ${{ github.repository }} | cut -d '/' -f 2)" >> $GITHUB_OUTPUT
+
+      - name: Send Slack Notification
+        id: slack-new-pr
+        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+        uses: slackapi/slack-github-action@v2
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: webhook-trigger
+          payload: |
+            {
+              "icon_emoji": ":ghost:",
+              "username": "${{ github.event.pull_request.user.login }}",
+              "channel": "#test-github-pr-slack",
+              "text": "`${{ steps.repo-name.outputs.name }}:`\n${{ github.event.pull_request.title }}\n<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.html_url }}>"
+            }
+
+      - name: Save message ID as PR comment
+        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `<!-- SLACK_TS: ${{ steps.slack-new-pr.outputs.ts }} -->`
+            })
+
+      - name: Retrieve message ID from PR comment
+        if: github.event_name == 'pull_request_review'
+        id: get-ts
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          result-encoding: string
+          script: |
+            const comments = await github.rest.issues.listComments({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+
+            for (const comment of comments.data) {
+              const match = comment.body.match(/<!-- SLACK_TS: ([\d.]+) -->/);
+              if (match) {
+                return match[1];
+              }
+            }
+
+            return '';
+
+      - name: Add approval reaction
+        if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
+        uses: slackapi/slack-github-action@v2
+        with:
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          method: reactions.add
+          payload: |
+            {
+              "channel": "#test-github-pr-slack",
+              "name": "white_check_mark",
+              "timestamp": "${{ steps.slack-new-pr.outputs.ts }}"
+            }
+
+      - name: Remove rejected reaction
+        if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
+        uses: slackapi/slack-github-action@v2
+        with:
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          method: reactions.remove
+          payload: |
+            {
+              "channel": "#test-github-pr-slack",
+              "name": "x",
+              "timestamp": "${{ steps.get-ts.outputs.result }}"
+            }
+
+      - name: Remove check mark reaction
+        if: github.event_name == 'pull_request_review' && github.event.review.state == 'changes_requested'
+        uses: slackapi/slack-github-action@v2
+        with:
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          method: reactions.remove
+          payload: |
+            {
+              "channel":"#test-github-pr-slack",
+              "name": "white_check_mark",
+              "timestamp": "${{ steps.get-ts.outputs.result }}"
+            }
+
+      - name: Add rejected reaction
+        if: github.event_name == 'pull_request_review' && github.event.review.state == 'changes_requested'
+        uses: slackapi/slack-github-action@v2
+        with:
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          method: reactions.add
+          payload: |
+            {
+              "channel": "#test-github-pr-slack",
+              "name": "x",
+              "timestamp": "${{ steps.get-ts.outputs.result }}"
+            }
