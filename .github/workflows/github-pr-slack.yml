@@ -9,8 +9,6 @@ on:
 jobs:
   notify_slack_on_new_pr:
     runs-on: ubuntu-latest
-    env:
-      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
     steps:
       - name: Set repository name
@@ -58,6 +56,8 @@ jobs:
       - name: Add approval reaction
         if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
         uses: slackapi/slack-github-action@v2
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: webhook-trigger
@@ -72,6 +72,8 @@ jobs:
       - name: Remove rejected reaction
         if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
         uses: slackapi/slack-github-action@v2
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: webhook-trigger
@@ -86,6 +88,8 @@ jobs:
       - name: Remove check mark reaction
         if: github.event_name == 'pull_request_review' && github.event.review.state == 'changes_requested'
         uses: slackapi/slack-github-action@v2
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: webhook-trigger
@@ -100,6 +104,8 @@ jobs:
       - name: Add rejected reaction
         if: github.event_name == 'pull_request_review' && github.event.review.state == 'changes_requested'
         uses: slackapi/slack-github-action@v2
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
         with:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           webhook-type: webhook-trigger
