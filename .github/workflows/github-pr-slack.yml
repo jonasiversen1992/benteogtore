@@ -31,7 +31,7 @@ jobs:
               "icon_emoji": ":ghost:",
               "username": ${{ github.event.pull_request.user.login }},
               "channel": ${{ env.channelName }},
-              "text": "${{ steps.repo-name.outputs.name }}:\n${{ github.event.pull_request.title }}\n<https://${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.html_url }}>"
+              "text": "``${{ steps.repo-name.outputs.name }}:`\n${{ github.event.pull_request.title }}\n<https://${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.html_url }}>"
             }
 
       - name: Create artifact with message ts
