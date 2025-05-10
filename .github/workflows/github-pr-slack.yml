@@ -26,32 +26,46 @@ jobs:
           payload: |
             {
               "icon_emoji": ":ghost:",
-              "username": ${{ github.event.pull_request.user.login }},
+              "username": "${{ github.event.pull_request.user.login }}",
               "channel": "#test-github-pr-slack",
               "text": "`${{ steps.repo-name.outputs.name }}:`\n${{ github.event.pull_request.title }}\n<https://${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.html_url }}>"
             }
 
-      - name: Create artifact with message ts
+      - name: Save message ID as PR comment
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
-        run: echo '${{ steps.slack-new-pr.outputs.ts }}' > slack_ts.txt
-
-      - name: Upload artifact
-        if: github.event_name == 'pull_request' && github.event.action == 'opened'
-        uses: actions/upload-artifact@v4
+        uses: actions/github-script@v6
         with:
-          name: slack-notification-info
-          path: slack_ts.txt
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `<!-- SLACK_TS: ${{ steps.slack-new-pr.outputs.ts }} -->`
+            })
 
-      - name: Download artifact
-        if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
-        uses: actions/download-artifact@v4
+      - name: Retrieve message ID from PR comment
+        if: github.event_name == 'pull_request_review'
+        id: get-ts
+        uses: actions/github-script@v6
         with:
-          name: slack-notification-info
-
-      - name: Set timestamp
-        if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
-        id: vars
-        run: echo "ts=$(cat slack_ts.txt)" >> $GITHUB_OUTPUT
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          result-encoding: string
+          script: |
+            const comments = await github.rest.issues.listComments({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            
+            for (const comment of comments.data) {
+              const match = comment.body.match(/<!-- SLACK_TS: ([\d.]+) -->/);
+              if (match) {
+                return match[1];
+              }
+            }
+              
+            return '';
 
       - name: Add approval reaction
         if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
@@ -63,7 +77,7 @@ jobs:
             {
               "channel": "#test-github-pr-slack",
               "name": "white_check_mark",
-              "timestamp": "${{ steps.vars.outputs.ts }}"
+              "timestamp": "${{ steps.get-ts.outputs.result }}"
             }
 
       - name: Remove rejected reaction
@@ -76,7 +90,7 @@ jobs:
             {
               "channel": "#test-github-pr-slack",
               "name": "x",
-              "timestamp": "${{ steps.vars.outputs.ts }}"
+              "timestamp": "${{ steps.get-ts.outputs.result }}"
             }
 
       - name: Remove check mark reaction
@@ -89,7 +103,7 @@ jobs:
             {
               "channel":"#test-github-pr-slack",
               "name": "white_check_mark",
-              "timestamp": "${{ steps.vars.outputs.ts }}"
+              "timestamp": "${{ steps.get-ts.outputs.result }}"
             }
 
       - name: Add rejected reaction
@@ -102,5 +116,5 @@ jobs:
             {
               "channel": "#test-github-pr-slack",
               "name": "x",
-              "timestamp": "${{ steps.vars.outputs.ts }}"
+              "timestamp": "${{ steps.get-ts.outputs.result }}"
             }
