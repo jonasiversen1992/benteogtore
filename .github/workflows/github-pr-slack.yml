@@ -9,6 +9,8 @@ on:
 jobs:
   notify_slack_on_new_pr:
     runs-on: ubuntu-latest
+    env:
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
     steps:
       - name: Set repository name
