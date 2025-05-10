@@ -1,0 +1,110 @@
+name: Slack Notification on New PR
+
+on:
+  pull_request:
+    types: [opened]
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  notify_slack_on_new_pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set repository name
+        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+        id: repo-name
+        run: echo "name=$(echo ${{ github.repository }} | cut -d '/' -f 2)" >> $GITHUB_OUTPUT
+
+      - name: Send Slack Notification
+        id: slack-new-pr
+        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+        uses: slackapi/slack-github-action@v2
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: webhook-trigger
+          payload: |
+            {
+              "icon_emoji": ":ghost:",
+              "username": ${{ github.event.pull_request.user.login }},
+              "channel": "#test-github-pr-slack",
+              "text": "`${{ steps.repo-name.outputs.name }}:`\n${{ github.event.pull_request.title }}\n<https://${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.html_url }}>"
+            }
+
+      - name: Create artifact with message ts
+        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+        run: echo '${{ steps.slack-new-pr.outputs.ts }}' > slack_ts.txt
+
+      - name: Upload artifact
+        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+        uses: actions/upload-artifact@v4
+        with:
+          name: slack-notification-info
+          path: slack_ts.txt
+
+      - name: Download artifact
+        if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
+        uses: actions/download-artifact@v4
+        with:
+          name: slack-notification-info
+
+      - name: Set timestamp
+        if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
+        id: vars
+        run: echo "ts=$(cat slack_ts.txt)" >> $GITHUB_OUTPUT
+
+      - name: Add approval reaction
+        if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
+        uses: slackapi/slack-github-action@v2
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: webhook-trigger
+          method: reactions.add
+          payload: |
+            {
+              "channel": "#test-github-pr-slack",
+              "name": "white_check_mark",
+              "timestamp": "${{ steps.vars.outputs.ts }}"
+            }
+
+      - name: Remove rejected reaction
+        if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
+        uses: slackapi/slack-github-action@v2
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: webhook-trigger
+          method: reactions.remove
+          payload: |
+            {
+              "channel": "#test-github-pr-slack",
+              "name": "x",
+              "timestamp": "${{ steps.vars.outputs.ts }}"
+            }
+
+      - name: Remove check mark reaction
+        if: github.event_name == 'pull_request_review' && github.event.review.state == 'changes_requested'
+        uses: slackapi/slack-github-action@v2
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: webhook-trigger
+          method: reactions.remove
+          payload: |
+            {
+              "channel":"#test-github-pr-slack",
+              "name": "white_check_mark",
+              "timestamp": "${{ steps.vars.outputs.ts }}"
+            }
+
+      - name: Add rejected reaction
+        if: github.event_name == 'pull_request_review' && github.event.review.state == 'changes_requested'
+        uses: slackapi/slack-github-action@v2
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          webhook-type: webhook-trigger
+          method: reactions.add
+          payload: |
+            {
+              "channel": "#test-github-pr-slack",
+              "name": "x",
+              "timestamp": "${{ steps.vars.outputs.ts }}"
+            }
