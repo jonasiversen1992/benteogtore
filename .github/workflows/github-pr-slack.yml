@@ -57,9 +57,7 @@ jobs:
         if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
         uses: slackapi/slack-github-action@v2
         with:
-          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           token: ${{ secrets.SLACK_BOT_TOKEN }}
-          webhook-type: webhook-trigger
           method: reactions.add
           payload: |
             {
@@ -72,9 +70,7 @@ jobs:
         if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
         uses: slackapi/slack-github-action@v2
         with:
-          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           token: ${{ secrets.SLACK_BOT_TOKEN }}
-          webhook-type: webhook-trigger
           method: reactions.remove
           payload: |
             {
@@ -87,9 +83,7 @@ jobs:
         if: github.event_name == 'pull_request_review' && github.event.review.state == 'changes_requested'
         uses: slackapi/slack-github-action@v2
         with:
-          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           token: ${{ secrets.SLACK_BOT_TOKEN }}
-          webhook-type: webhook-trigger
           method: reactions.remove
           payload: |
             {
@@ -102,9 +96,7 @@ jobs:
         if: github.event_name == 'pull_request_review' && github.event.review.state == 'changes_requested'
         uses: slackapi/slack-github-action@v2
         with:
-          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           token: ${{ secrets.SLACK_BOT_TOKEN }}
-          webhook-type: webhook-trigger
           method: reactions.add
           payload: |
             {
