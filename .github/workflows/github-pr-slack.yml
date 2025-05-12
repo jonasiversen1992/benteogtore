@@ -72,7 +72,7 @@ jobs:
         run: |
           curl -X POST -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" \
           -H "Content-type: application/json; charset=utf-8" \
-          --data '{"channel":"C08RQ855UP4","timestamp":"${{ steps.slack_new_pr.outputs.ts }}","name":"white_check_mark"}' \
+          --data '{"channel":"C08RQ855UP4","timestamp":"${{ steps.get_ts.outputs.result }}","name":"white_check_mark"}' \
           https://slack.com/api/reactions.add
 
       - name: Add approval reaction
@@ -83,7 +83,7 @@ jobs:
           method: reactions.add
           payload: |
             {
-              "channel": "#test-github-pr-slack",
+              "channel": "C08RQ855UP4",
               "name": "white_check_mark",
               "timestamp": ${{ steps.get_ts.outputs.result }}
             }
@@ -96,7 +96,7 @@ jobs:
           method: reactions.remove
           payload: |
             {
-              "channel": "#test-github-pr-slack",
+              "channel": "C08RQ855UP4",
               "name": "x",
               "timestamp": ${{ steps.get_ts.outputs.result }}
             }
@@ -109,7 +109,7 @@ jobs:
           method: reactions.remove
           payload: |
             {
-              "channel":"#test-github-pr-slack",
+              "channel":"C08RQ855UP4",
               "name": "white_check_mark",
               "timestamp": ${{ steps.get_ts.outputs.result }}
             }
@@ -122,7 +122,7 @@ jobs:
           method: reactions.add
           payload: |
             {
-              "channel": "#test-github-pr-slack",
+              "channel": "C08RQ855UP4",
               "name": "x",
               "timestamp": ${{ steps.get_ts.outputs.result }}
             }
