@@ -70,7 +70,7 @@ jobs:
             return '';
 
       - name: Add approval reaction
-        if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
+        # if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
         uses: slackapi/slack-github-action@v2
         with:
           token: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -79,7 +79,7 @@ jobs:
             {
               "channel": "#test-github-pr-slack",
               "name": "white_check_mark",
-              "timestamp": ${{ steps.get_ts.outputs.result }}
+              "timestamp": ${{ steps.slack_new_pr.outputs.ts }}
             }
 
       - name: Remove rejected reaction
