@@ -79,7 +79,7 @@ jobs:
             {
               "channel": "#test-github-pr-slack",
               "name": "white_check_mark",
-              "timestamp": "${{ steps.get_ts.outputs.result }}"
+              "timestamp": ${{ steps.get_ts.outputs.result }}
             }
 
       - name: Remove rejected reaction
@@ -92,7 +92,7 @@ jobs:
             {
               "channel": "#test-github-pr-slack",
               "name": "x",
-              "timestamp": "${{ steps.get_ts.outputs.result }}"
+              "timestamp": ${{ steps.get_ts.outputs.result }}
             }
 
       - name: Remove check mark reaction
@@ -105,7 +105,7 @@ jobs:
             {
               "channel":"#test-github-pr-slack",
               "name": "white_check_mark",
-              "timestamp": "${{ steps.get_ts.outputs.result }}"
+              "timestamp": ${{ steps.get_ts.outputs.result }}
             }
 
       - name: Add rejected reaction
@@ -118,5 +118,5 @@ jobs:
             {
               "channel": "#test-github-pr-slack",
               "name": "x",
-              "timestamp": "${{ steps.get_ts.outputs.result }}"
+              "timestamp": ${{ steps.get_ts.outputs.result }}
             }
