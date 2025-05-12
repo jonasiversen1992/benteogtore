@@ -28,7 +28,6 @@ jobs:
           payload: |
             {
               "icon_emoji": ":ghost:",
-              "username": "${{ github.event.pull_request.user.login }}",
               "channel": "#test-github-pr-slack",
               "text": "${{ steps.repo_name.outputs.name }}:\n• ${{ github.event.pull_request.title }}\n<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.html_url }}>",
               "unfurl_links": false,
@@ -69,8 +68,15 @@ jobs:
 
             return '';
 
+      - name: React to PR summary message in slack with emoji
+        run: |
+          curl -X POST -H "Authorization: Bearer ${{ secrets.SLACK_BOT_TOKEN }}" \
+          -H "Content-type: application/json; charset=utf-8" \
+          --data '{"channel":"C08RQ855UP4","timestamp":"${{ steps.slack_new_pr.outputs.ts }}","name":"white_check_mark"}' \
+          https://slack.com/api/reactions.add
+
       - name: Add approval reaction
-        # if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
+        if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
         uses: slackapi/slack-github-action@v2
         with:
           token: ${{ secrets.SLACK_BOT_TOKEN }}
@@ -79,7 +85,7 @@ jobs:
             {
               "channel": "#test-github-pr-slack",
               "name": "white_check_mark",
-              "timestamp": ${{ steps.slack_new_pr.outputs.ts }}
+              "timestamp": ${{ steps.get_ts.outputs.result }}
             }
 
       - name: Remove rejected reaction
